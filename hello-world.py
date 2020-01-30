@@ -1,5 +1,3 @@
-import airflow
-
 class Demo:
 
     def print_greetings(self, name):
