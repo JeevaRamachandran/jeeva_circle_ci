@@ -1,4 +1,26 @@
-version: 2
+# version: 2
+# jobs:
+#   build:
+#     docker:
+#       - image: circleci/node:8.11.2
+#     working_directory: ~/repo
+#     steps:
+#       - checkout
+#       - run: npm install
+#       - run: node hello.js
+# nightly:
+#   jobs:
+#     - build
+#   triggers:
+#     - schedule:
+#         cron: "1 * * * *"
+#         filters:
+#           branches:
+#             only:
+#               - master
+
+version: 2.0
+
 jobs:
   build:
     docker:
@@ -6,46 +28,23 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      # Bundle install dependencies
       - run: npm install
       - run: node hello.js
-nightly:
-  jobs:
-    build:
-      docker:
-        - image: circleci/node:8.11.2
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - run: npm install
-      - run: node hello.js
-  triggers:
-    - schedule:
-        cron: "1 * * * *"
-        filters:
-          branches:
-            only:
-              - master
-  # — checkout
-  # - run: npm install
 
-  # — run: npm test
-# workflows:
-#   version: 2
-#   test-build:
-#     jobs:
-#       - build:
-#           filters:
-#             branches:
-#               only: master
-#   build-on-schedule:
-#     jobs:
-#       - build
-#     # The cron format is:
-#     # min (0-59) hour (0-23) monthday (1-31) month (1-12) weekday (0-6, 0=Sun)
-#     triggers:
-#       - schedule:
-#           cron: "1 * * * *"
-#           filters:
-#             branches:
-#               only:
-#                 - master
+workflows:
+  version: 2
+  commit-workflow:
+    jobs:
+      - build
+  scheduled-workflow:
+    triggers:
+      - schedule:
+          cron: "1 * * * *"
+          filters:
+            branches:
+              only:
+                - master
+
+    jobs:
+      - build
