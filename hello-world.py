@@ -1,7 +1,7 @@
 class Demo:
 
     def print_greetings(self, name):
-        print(f"hello {name}")
+        print(f"hello jeeva {name}")
 
 
 if __name__ == "__main__":

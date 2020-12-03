@@ -62,10 +62,10 @@ workflows:
     jobs:
       - build:
           filters:
-              branches:
-                ignore:
-                  - master
-                  - develop
+            branches:
+              ignore:
+                # - master
+                - develop
       - test:
           requires:
             - build
