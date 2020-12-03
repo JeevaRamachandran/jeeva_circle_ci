@@ -10,7 +10,7 @@ jobs:
       - run: node hello.js
 triggers:
   - schedule:
-      cron: "10 * * * *"
+      cron: "1 * * * *"
       filters:
         branches:
           only:
