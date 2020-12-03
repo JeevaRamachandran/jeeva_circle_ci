@@ -16,8 +16,8 @@ workflows:
     jobs:
       - build
   scheduled-workflow:
-    jobs:
-      - build
+    # jobs:
+    #   - build
     triggers:
       - schedule:
           cron: "1 * * * *"
