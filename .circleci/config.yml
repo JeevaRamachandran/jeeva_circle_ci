@@ -8,7 +8,14 @@ jobs:
       - checkout
       - run: npm install
       - run: node hello.js
-      # — checkout
-      # - run: npm install
+triggers:
+  - schedule:
+      cron: "10 * * * *"
+      filters:
+        branches:
+          only:
+            - master
+  # — checkout
+  # - run: npm install
 
-      # — run: npm test
+  # — run: npm test
