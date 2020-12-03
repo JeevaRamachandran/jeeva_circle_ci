@@ -7,6 +7,7 @@ jobs:
     steps:
       - checkout
       - run: npm install
+      - run: node hello.js
       # — checkout
       # - run: npm install
 
