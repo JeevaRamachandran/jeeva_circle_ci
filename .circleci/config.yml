@@ -66,6 +66,6 @@ workflows:
               ignore:
                 # - master
                 - develop
-      - test:
-          requires:
-            - build
+      # - test:
+      #     requires:
+      #       - build
