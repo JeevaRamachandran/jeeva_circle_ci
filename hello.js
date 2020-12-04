@@ -20,7 +20,7 @@ TIMESTAMP_MILLIS(last_modified_time) last_updated_time,
   console.log(data);
 };
 
-const { projectId, clientEmail, BQ_KEY } = bq;
+const { projectId, clientEmail } = bq;
 
 const gcpParams = {
   projectId,
