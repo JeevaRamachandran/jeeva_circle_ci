@@ -20,7 +20,7 @@ workflows:
     #   - build
     triggers:
       - schedule:
-          cron: "* * * * *"
+          cron: "0 * * * *"
           filters:
             branches:
               only:
