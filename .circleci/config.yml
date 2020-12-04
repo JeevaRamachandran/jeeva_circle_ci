@@ -20,7 +20,7 @@ workflows:
     #   - build
     triggers:
       - schedule:
-          cron: "60 * * * *"
+          cron: "59 * * * *"
           filters:
             branches:
               only:
