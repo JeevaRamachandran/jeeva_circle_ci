@@ -5,6 +5,8 @@
   "main": "server.js",
   "author": "Scotch",
   "dependencies": {
+    "config": "^3.1.0",
+    "@google-cloud/bigquery": "^4.1.4",
     "body-parser": "^1.18.2",
     "mongoose": "4.10.8",
     "express": "^4.10.8",
