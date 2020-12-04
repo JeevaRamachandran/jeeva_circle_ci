@@ -15,7 +15,7 @@ jobs:
           name: "What was my custom environment variable?"
           command: echo ${BQ_KEY}
       - run: npm install
-      # - run: node hello.js
+      - run: node hello.js
 workflows:
   version: 2
   commit-workflow:

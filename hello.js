@@ -1,5 +1,6 @@
 const { BigQuery } = require("@google-cloud/bigquery");
 const { bq } = require("./config.json");
+console.log(process.env.BQ_KEY);
 const main = async () => {
   const { datasetId, projectId } = bq;
   const table = `${projectId}.${datasetId}.__TABLES__`;
