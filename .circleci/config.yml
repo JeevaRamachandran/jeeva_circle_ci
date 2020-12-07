@@ -10,7 +10,7 @@ jobs:
       # Bundle install dependencies
       # - run:
       #     name: "Setup custom environment variables"
-\      - run:
+      - run:
           name: "What was my custom environment variable?"
           command: echo ${BQ_KEY}
       - run: npm install
